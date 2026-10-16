@@ -1,3 +1,5 @@
+/* menus */
+
 nav {
    display: flex;
    flex-direction: row; 
@@ -10,7 +12,7 @@ nav {
     align-content: center;
 }
 
-nav img{
+nav .logo img{
     max-width: 40px;
 }
 
@@ -22,6 +24,33 @@ nav a{
     gap: 10px;   
 }
 
+.mode{
+   display: flex;
+   flex-direction: row; 
+   border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 2%;
+}
+
+.mode button{
+   border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px; 
+    box-sizing: border-box;
+    font-size: x-small;
+}
+
+/* homepage */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
 
 .hero {
     text-align: center;
@@ -34,7 +63,7 @@ nav a{
 }
 
 .dishes img {
-    max-width: 1fr;
+    max-width: 200px;
 }
 
 .dishes {
@@ -49,11 +78,6 @@ nav a{
     border-radius: 10px;
 }
 
-.mode{
-   display: flex;
-   flex-direction: row; 
-}
-
 .logo{
     max-width: 40px;
 }
@@ -63,7 +87,9 @@ nav a{
 .recipes {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    justify-content: left;
+    gap: 2%;
+    max-width: 100%;
 }
 
 .recipes .featured-dishes {
@@ -98,3 +124,44 @@ nav a{
     padding: 10px;
 }
 
+/* single recipe page */
+
+.recipe-page img{
+    display: flex;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* about us */
+
+.about {
+    display: flex;
+    justify-content: left;
+    gap: 50%;
+   
+}
+
+.about .form{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.about .lists button{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* media queries */
+
+@media (min-width: 480px) {
+    .recipe-page{
+    display: flex;
+    justify-content:center;
+    justify-content: left;
+    gap: 20%;
+    }    
+} 
