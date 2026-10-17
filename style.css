@@ -1,32 +1,42 @@
-/* menus */
-
-nav {
-   display: flex;
-   flex-direction: row; 
-   box-sizing: border-box;
-   margin-bottom: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    gap: 10px;
-    align-content: center;
-}
+/* navigation */
 
 nav .logo img{
     max-width: 40px;
 }
 
 nav a{
-  margin-bottom: 20px;
+    margin-bottom: 20px;
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
     gap: 10px;   
 }
 
+nav {
+    display: flex;
+    flex-direction: row; 
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    min-width: fit-content;
+    width: 100%;
+    place-self: center;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* mode */
+
 .mode{
    display: flex;
    flex-direction: row; 
+
    border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -34,6 +44,17 @@ nav a{
     justify-content: center;
     box-sizing: border-box;
     gap: 2%;
+    display: flex;
+    flex-direction: column; 
+    height: 250px;
+    width: 250px;
+}
+
+.home .mode{
+   display: flex;
+   flex-direction: row; 
+   height: fit-content;
+    width: 100%;
 }
 
 .mode button{
@@ -44,12 +65,22 @@ nav a{
     font-size: x-small;
 }
 
-/* homepage */
+.home .mode button{
+        width: 100%;
+        font-size: small;
+        height: fit-content;
+        box-sizing: border-box;
+}
+
+/* homepage------------------- */
 
 .home {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
+    text-align: center;
+    place-self: center;
+    width: 80%;
 }
 
 .hero {
@@ -62,14 +93,20 @@ nav a{
     border-radius: 10px;
 }
 
+.home button{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 .dishes img {
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .dishes {
     display: flex;
-    column-gap: 1fr;
     text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
 }
 
 .dishes div{
@@ -82,7 +119,9 @@ nav a{
     max-width: 40px;
 }
 
-/* recipe page */
+
+
+/* recipe page-------------- */
 
 .recipes {
     display: flex;
@@ -95,10 +134,11 @@ nav a{
 .recipes .featured-dishes {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
     border: 2px solid black;
     padding: 10px;
     box-sizing: border-box;
-    gap: 10px;
 }
 
 .recipes .featured-dishes div{
@@ -124,7 +164,8 @@ nav a{
     padding: 10px;
 }
 
-/* single recipe page */
+
+/* single recipe page --------------*/
 
 .recipe-page img{
     display: flex;
@@ -134,13 +175,19 @@ nav a{
     padding: 10px;
 }
 
-/* about us */
+.recipe-page{
+    display: flex;
+    justify-content:center;
+    gap: 20%;
+}   
+
+/* about us --------------*/
 
 .about {
     display: flex;
-    justify-content: left;
-    gap: 50%;
-   
+    flex-direction: row;
+    justify-content:center;
+    gap: 20%;
 }
 
 .about .form{
@@ -155,13 +202,160 @@ nav a{
     padding: 10px;
 }
 
-/* media queries */
 
-@media (min-width: 480px) {
+/* media queries ======================= */
+
+@media (480px <= width <= 900px) {
+        /* recipe menu page */
+
+        /* mode */
+    .recipes .mode{
+        display: flex;
+        flex-direction: column; 
+        height: 250px;
+    }
+
+    .mode button{
+        width: 100%;
+        font-size: small;
+        height: fit-content;
+        box-sizing: border-box;
+    }
+           /* dishes */
+    .recipes .dish-container {
+        text-align: center;
+    }
+
+    .recipes .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+  
+    .recipes .dishes div{
+        width: 150px;
+    }
+
+    .recipes .dishes div .logo{
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* mode */
+    .mode{
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        place-self: center;
+        min-width: fit-content;
+    }
+
+    .mode button{
+        width: 110%;
+        box-sizing: border-box;
+        font-size: small;
+        margin: .5em;
+        box-sizing: border-box;
+    }
+
+    /* homepage */
+    
+    .dishes {
+        display: flex;
+        flex-direction: column;
+        place-self: center;
+        grid-row-gap: 10px;
+        width: 70%;
+        margin-bottom: 5%;
+    }
+
+    .home button {
+        height: 30px;
+    }
+
+    /* recipe menu page */
+
+    .recipes {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 2%;
+        max-width: 100%;
+    }
+        /* featured dishes */
+    .recipes .featured-dishes {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .recipes .featured-dishes section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 300px;
+    }
+
+    .recipes .featured-dishes section div{
+        display: flex;
+        box-sizing: border-box;
+        height: 30%;
+    }
+
+    .recipes .featured-dishes section img{
+        display: none;
+    }
+
+        /* dishes */
+    .recipes .dish-container {
+        text-align: center;
+    }
+
+    .recipes .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+  
+    .recipes .dishes div{
+        width: 150px;
+    }
+
+    .recipes .dishes div .logo{
+        width: 70%;
+    }
+        /* mode */
+    .recipes .mode {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        gap: 10px;
+    }
+
+    /* single recipe page */
     .recipe-page{
     display: flex;
-    justify-content:center;
-    justify-content: left;
-    gap: 20%;
-    }    
+    flex-direction: column;
+    }   
+   /* about  */
+    .about {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    }
+    .about .contact-about{
+        display: flex;
+        gap: 10%;
+        justify-content: center;
+    }
+        /* about mode */
+    .about .contact-about .mode{
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
 } 
