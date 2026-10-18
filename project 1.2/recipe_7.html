@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamomile Tea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="single-recipe-page">
+    <nav>
+        <p>Recipe Studio</p>
+        <img class="logo" src="assets/logo.png" alt="Recipe Studio logo">
+        <a href="index.html">home</a>
+        <a href="page_2.html">recipes</a>
+        <a href="about.html">about</a>
+    </nav>
+
+    <div class="recipe-page">
+        <section class="recipe-summary">
+            <h1>Chamomile Tea</h1>
+            <img src="assets/chamomile.png" alt="Temporary Recipe Studio image placeholder for a cup of chamomile tea">
+            <h2>at a glance</h2>
+            <ul>
+                <li>Prep time: 2 minutes</li>
+                <li>Cook time: 5 minutes</li>
+                <li>Yield: 1 cup</li>
+                <li>Difficulty: Easy</li>
+            </ul>
+        </section>
+
+        <section class="lists">
+            <h2>ingredients</h2>
+            <ul>
+                <li>1 chamomile tea bag or 1 tablespoon dried chamomile flowers in an infuser</li>
+                <li>1 cup freshly boiled water</li>
+                <li>Honey or lemon, optional</li>
+            </ul>
+            <h2>instructions</h2>
+            <ol>
+                <li><strong>Heat the water.</strong> Bring fresh water to a boil, then let it rest briefly so it is no longer at a rolling boil.</li>
+                <li><strong>Steep the tea.</strong> Place the tea bag or infuser in a mug. Pour in the hot water and steep for 5 minutes, or follow the package directions.</li>
+                <li><strong>Remove the tea.</strong> Remove the tea bag or infuser. Avoid squeezing the bag if you prefer a gentler flavor.</li>
+                <li><strong>Finish and serve.</strong> Add honey or lemon if desired and serve warm.</li>
+            </ol>
+
+            <section class="mode">
+                <p>mode</p>
+                <button type="button" data-theme-choice="light">light</button>
+                <button type="button" data-theme-choice="dark">dark</button>
+                <button type="button" data-theme-choice="warm">ambient</button>
+            </section>
+        </section>
+    </div>
+
+    <script id="recipe-studio-theme-script">
+    (function () {
+        const savedTheme = localStorage.getItem("recipeStudioTheme") || "warm";
+        document.documentElement.dataset.theme = savedTheme;
+
+        document.querySelectorAll("[data-theme-choice]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const theme = button.dataset.themeChoice;
+                document.documentElement.dataset.theme = theme;
+                localStorage.setItem("recipeStudioTheme", theme);
+            });
+        });
+    })();
+    </script>
+
+</body>
+</html>

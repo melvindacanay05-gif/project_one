@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Pesto Panini Sandwich</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="single-recipe-page">
+    <nav>
+        <p>Recipe Studio</p>
+        <img class="logo" src="assets/logo.png" alt="Recipe Studio logo">
+        <a href="index.html">home</a>
+        <a href="page_2.html">recipes</a>
+        <a href="about.html">about</a>
+    </nav>
+
+    <div class="recipe-page">
+        <section class="recipe-summary">
+            <h1>Chicken Pesto Panini Sandwich</h1>
+            <img src="assets/chickenpesto.png" alt="Temporary food image placeholder for a chicken pesto panini sandwich">
+            <h2>at a glance</h2>
+            <ul>
+                <li>Prep time: 10 minutes</li>
+                <li>Cook time: 8–10 minutes</li>
+                <li>Yield: 1 sandwich</li>
+                <li>Difficulty: Easy</li>
+            </ul>
+        </section>
+
+        <section class="lists">
+            <h2>ingredients</h2>
+            <ul>
+                <li>1 panini roll or ciabatta roll</li>
+                <li>1 small cooked chicken breast, sliced</li>
+                <li>1–2 tablespoons basil pesto</li>
+                <li>2 slices mozzarella cheese</li>
+                <li>2 tomato slices</li>
+                <li>1 teaspoon olive oil or softened butter</li>
+            </ul>
+            <h2>instructions</h2>
+            <ol>
+                <li><strong>Prepare the bread.</strong> Slice the roll in half and spread pesto on the inside of each half.</li>
+                <li><strong>Add the filling.</strong> Layer the sliced chicken, mozzarella, and tomato on the bottom half.</li>
+                <li><strong>Close the sandwich.</strong> Place the top half of the bread over the filling and lightly brush the outside with oil or butter.</li>
+                <li><strong>Toast the panini.</strong> Place in a preheated panini press or skillet. Cook until the bread is crisp and the cheese has melted, turning once if using a skillet.</li>
+                <li><strong>Serve.</strong> Let cool briefly, slice in half, and serve warm.</li>
+            </ol>
+
+            <section class="mode">
+                <p>mode</p>
+                <button type="button" data-theme-choice="light">light</button>
+                <button type="button" data-theme-choice="dark">dark</button>
+                <button type="button" data-theme-choice="warm">ambient</button>
+            </section>
+        </section>
+    </div>
+
+    <script id="recipe-studio-theme-script">
+    (function () {
+        const savedTheme = localStorage.getItem("recipeStudioTheme") || "warm";
+        document.documentElement.dataset.theme = savedTheme;
+
+        document.querySelectorAll("[data-theme-choice]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const theme = button.dataset.themeChoice;
+                document.documentElement.dataset.theme = theme;
+                localStorage.setItem("recipeStudioTheme", theme);
+            });
+        });
+    })();
+    </script>
+
+</body>
+</html>

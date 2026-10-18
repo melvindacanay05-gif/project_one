@@ -1,0 +1,592 @@
+/* navigation */
+
+nav a{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav {
+    border: 2px solid black;
+    background-color: antiquewhite; 
+    border-radius: 10px;
+    display: flex;
+    box-sizing: border-box;
+
+    margin-bottom: 1em;
+    min-width: fit-content;
+    width: 100%;
+    padding: 10px;
+
+    justify-content: center;
+    gap: 1em;
+}
+
+.logo{
+    max-height: 3em;
+}
+
+
+/* mode */
+
+.home .mode{ /* mode for homescreen */
+   display: flex;
+   flex-direction: row; 
+   height: fit-content;
+   justify-content: center;
+    width: 100%;
+    padding: 1em;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    
+}
+
+.mode{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column; 
+    width: 30%;
+    height: fit-content;
+    padding: 1em;
+
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 10px;
+
+} 
+
+.about .mode, .recipe-page .mode  {
+    width: 100%;  
+}
+
+
+/* styling mode button and text */
+.home .mode button{
+    width: 100%;
+}
+
+.mode button{
+    padding: 10px; 
+    box-sizing: border-box;
+    min-height: fit-content;
+    font-size: large;
+    margin: .5em;
+
+    border: 2px solid black;
+     border-radius: 10px;
+}
+
+.mode a{ /* button text */
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* homepage------------------- */
+
+.home {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    place-self: center;
+
+    width: 80%;
+    background-image: url('assets/bg.png');
+}
+
+/* hero banner */
+.hero {
+    background-image: url("assets/hero.jpg");
+
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.hero img{
+    max-width:70% ;
+}
+
+/* slogan, button, cards */
+.home h1 {
+    text-shadow: 1px 1px 10px olive;
+    box-sizing: border-box;
+    color: bisque;
+}
+
+.home button{
+    place-self: center;
+    
+    border: 2px dashed black;
+    background-color: antiquewhite;
+    border-radius: 10px;
+
+    height: 2em;
+    width: 50%;
+}
+
+/* dish cards */
+.dishes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+}
+
+.dishes img {
+    border-radius: 10px;
+    border: 2px dotted;
+    
+    max-width: 10em;
+}
+
+.dishes div{
+    border: 2px dashed beige;
+    padding: 10px;
+    border-radius: 10px;
+
+    background-image: url('assets/gold.jpg');
+}
+
+
+
+/* recipe menu page-------------- */
+
+.recipes-page{
+    background-image: url('assets/cozy_kitchen.png');
+}
+
+.recipes {
+    display: flex;
+    gap: .5em;
+    max-width: 100%;
+
+    place-self: center;
+
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px rgba(132, 70, 70, 0.904);
+}
+
+/* featured dishes banner */
+
+.recipes .featured-dishes {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    
+    background-color: antiquewhite;
+    border: 2px solid black;
+    padding: .5em;
+    max-height: fit-content;
+
+}
+
+.recipes .featured-dishes div{
+    background-image: url('assets/gold.jpg');
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1em;
+
+    margin-top: 1em;
+    text-align: center;
+}
+
+.recipes .featured-dishes .food-image{
+    max-width: 8em;
+    border-radius: 10px;
+}
+
+.featured-dishes h1 {
+    color: black;
+}
+
+/* dishes grid */
+
+.recipes .dishes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    gap: 1em;
+}
+
+.recipes-page .dishes div {
+    background-image: url('assets/normal_teir.jpg');
+    border: 3px solid black;
+}
+
+/* mode for recipes menu page */
+
+.recipes .mode {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    max-width: fit-content;
+
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: .5em;
+}
+
+.recipes .mode p{
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+
+    place-self: center;
+}
+
+
+
+
+/* single recipe page --------------*/
+
+.single-recipe-page{
+    background-image: url('assets/recipe_paper.jpg');
+}   
+
+.recipe-page img{
+    display: flex;
+    max-width: 250px;
+    border-radius: 10px;
+    border: 2px dotted black;
+    
+    padding: 10px;
+}
+
+
+.recipe-page {
+    display: flex;
+    gap: 1em;
+    width: 90%;
+    place-self: center;
+
+    color:rgb(74, 34, 5); /* makes all text brown */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* about us --------------*/
+
+.about-contact {
+    background-image: url('assets/Telephones.png');
+}
+
+.about {
+    display: flex;
+
+    justify-content:center;
+    gap: 10%;
+}
+
+.about-section {
+    border: 2px dotted black;
+    border-radius: 10px;
+    background-color: antiquewhite;   
+    
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.about .form, .about .lists button{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: .5em;
+}
+
+.about .lists{
+    border: 2px dotted black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 1em;
+}
+
+
+/* media queries ======================= */
+@media ( 480px <= width <= 900px) {
+    .recipes .dishes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+}
+
+@media (max-width: 480px) {
+
+    /* mode */
+    .mode{
+        display: flex;
+        flex-direction: column; 
+        place-self: center;
+        min-width: fit-content;
+
+        align-items: center;
+    }
+
+    .mode button{
+        box-sizing: border-box;
+        width: 100%;
+        margin: .5em;
+        font-size: small;
+    }
+
+    .recipes .mode, .recipe-page .mode {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* homepage */
+    
+    .dishes {
+        display: flex;
+        flex-direction: column;
+
+        place-self: center;
+        grid-row-gap: 1em;
+        width: auto;
+    }
+
+    .home button {
+        height: 3em;
+    }
+
+    /* recipe menu page------------ */
+
+    .recipes {
+        display: flex;
+        flex-direction: column;
+
+        place-self: center;
+    }
+
+    /* featured dishes */
+    .recipes .featured-dishes {
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 1em;
+
+    }
+
+    .recipes .featured-dishes section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recipes .featured-dishes img {
+        float: left;
+        max-height: 10em;
+    }
+
+
+        /* dishes */
+    .recipes .dish-container {
+        text-align: center;
+    }
+
+    .recipes .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* single recipe page ---------*/
+    .recipe-page{
+    display: flex;
+    flex-direction: column;
+    }   
+    
+   /* about page --------------- */
+    .about {
+        display: flex;
+        flex-direction: column;
+        
+        place-self: center;
+    }
+
+    .about .contact-about{
+        display: flex;
+        gap: 1em;
+    }
+}
+
+
+body[data-theme="light"] {
+    position: relative;
+    isolation: isolate;
+    color: #29231d;
+}
+
+body[data-theme="light"]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 250, 238, 0.62);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body[data-theme="dark"] {
+    position: relative;
+    isolation: isolate;
+    color: #f5eee3;
+}
+
+body[data-theme="dark"]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 18, 20, 0.72);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body[data-theme="light"] nav,
+body[data-theme="light"] .mode,
+body[data-theme="light"] .about-section,
+body[data-theme="light"] .lists,
+body[data-theme="light"] .featured-dishes,
+body[data-theme="light"] .recipes .featured-dishes div,
+body[data-theme="light"] .dishes div,
+body[data-theme="light"] .hero {
+    background-color: rgba(255, 250, 238, 0.76);
+    background-blend-mode: screen;
+    color: #29231d;
+    border-color: #8a7965;
+}
+
+body[data-theme="dark"] nav,
+body[data-theme="dark"] .mode,
+body[data-theme="dark"] .about-section,
+body[data-theme="dark"] .lists,
+body[data-theme="dark"] .featured-dishes,
+body[data-theme="dark"] .recipes .featured-dishes div,
+body[data-theme="dark"] .dishes div,
+body[data-theme="dark"] .hero {
+    background-color: rgba(25, 24, 24, 0.78);
+    background-blend-mode: multiply;
+    color: #f5eee3;
+    border-color: #b4a58f;
+}
+
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3,
+body[data-theme="light"] p,
+body[data-theme="light"] li,
+body[data-theme="light"] .recipes,
+body[data-theme="light"] .recipe-page {
+    color: #29231d;
+    text-shadow: none;
+}
+
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] p,
+body[data-theme="dark"] li,
+body[data-theme="dark"] .recipes,
+body[data-theme="dark"] .recipe-page {
+    color: #f5eee3;
+    text-shadow: none;
+}
+
+body[data-theme="light"] .mode button,
+body[data-theme="light"] button {
+    color: #29231d;
+    background-color: rgba(255, 250, 238, 0.90);
+    border-color: #8a7965;
+    cursor: pointer;
+}
+
+body[data-theme="dark"] .mode button,
+body[data-theme="dark"] button {
+    color: #f5eee3;
+    background-color: rgba(35, 34, 33, 0.92);
+    border-color: #b4a58f;
+    cursor: pointer;
+}
+
+body[data-theme="light"] .mode button[aria-pressed="true"],
+body[data-theme="dark"] .mode button[aria-pressed="true"],
+body[data-theme="warm"] .mode button[aria-pressed="true"] {
+    outline: 3px solid currentColor;
+    outline-offset: 1px;
+    font-weight: bold;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+    transition: background-color 0.25s ease;
+}
+
+html[data-theme="light"] body::before {
+    background-color: rgba(255, 247, 226, 0.55);
+}
+
+html[data-theme="dark"] body::before {
+    background-color: rgba(28, 25, 23, 0.68);
+}
+
+html[data-theme="warm"] body::before {
+    background-color: transparent;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] body a,
+html[data-theme="dark"] body h1,
+html[data-theme="dark"] body h2,
+html[data-theme="dark"] body h3,
+html[data-theme="dark"] body p,
+html[data-theme="dark"] body li {
+    color: #f7ead5;
+}
+
+html[data-theme="dark"] nav,
+html[data-theme="dark"] .mode,
+html[data-theme="dark"] .about-section,
+html[data-theme="dark"] .about .lists,
+html[data-theme="dark"] .recipe-summary,
+html[data-theme="dark"] .recipe-page .lists {
+    background-color: rgba(38, 35, 32, 0.88);
+    color: #f7ead5;
+}
+
+html[data-theme="dark"] button {
+    background-color: #3b332d;
+    color: #fff4e3;
+    border-color: #d6c3a5;
+}
+
+html[data-theme="light"] nav,
+html[data-theme="light"] .mode,
+html[data-theme="light"] .about-section,
+html[data-theme="light"] .about .lists,
+html[data-theme="light"] .recipe-summary,
+html[data-theme="light"] .recipe-page .lists {
+    background-color: rgba(255, 248, 235, 0.82);
+    color: #4a2205;
+}
+
+.mode button[data-theme-choice] {
+    cursor: pointer;
+}

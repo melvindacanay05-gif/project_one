@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    
+<body class="home">
+    <nav>
+        <img class="logo" src="assets/logo.png" alt="Recipe Studio logo">
+        <a href="index.html">home</a>
+        <a href="page_2.html">recipes</a></button>
+        <a href="about.html">about</a>
+    </nav>
+    <section class="hero">
+        <img src="assets\rs1.png" alt="">
+    </section>
+    <h1>slogan</h1>
+    <button class="slogan-button">Get Started</button>
+    <h1>Featured Recipes</h1>
+    <section class="dishes">
+        <div>
+            <img src="assets/focaccia.jpg" alt="Rosemary sea salt focaccia">
+            <h2><a href="recipe.html">Rosemary Sea Salt Focaccia</a></h2>
+        </div>
+        <div>
+            <img src="assets/HECcroissant.png" alt="Egg, ham, and cheese croissant">
+            <h2><a href="recipe_3.html">Egg, Ham &amp; Cheese Croissant</a></h2>
+        </div>
+        <div>
+            <img src="assets/chickenpesto.png" alt="Chicken pesto panini sandwich">
+            <h2><a href="recipe_4.html">Chicken Pesto Panini Sandwich</a></h2>
+        </div>
+    </section>
+    
+<section class="mode">
+                <p>mode</p>
+                <button type="button" data-theme-choice="light">light</button>
+                <button type="button" data-theme-choice="dark">dark</button>
+                <button type="button" data-theme-choice="warm">ambient</button>
+            </section>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButtons = document.querySelectorAll(
+        ".mode button[data-theme-choice]"
+    );
+    const themes = ["light", "dark", "warm"];
+    const savedTheme = localStorage.getItem("recipeStudioTheme");
+    const initialTheme = themes.includes(savedTheme) ? savedTheme : "warm";
+
+    function applyTheme(theme) {
+        if (!themes.includes(theme)) return;
+
+        document.body.setAttribute("data-theme", theme);
+        localStorage.setItem("recipeStudioTheme", theme);
+
+        themeButtons.forEach(function (button) {
+            button.setAttribute(
+                "aria-pressed",
+                button.dataset.themeChoice === theme
+            );
+        });
+    }
+
+    themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyTheme(button.dataset.themeChoice);
+        });
+    });
+
+    applyTheme(initialTheme);
+});
+</script>
+
+
+    <script id="recipe-studio-theme-script">
+    (function () {
+        const savedTheme = localStorage.getItem("recipeStudioTheme") || "warm";
+        document.documentElement.dataset.theme = savedTheme;
+
+        document.querySelectorAll("[data-theme-choice]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const theme = button.dataset.themeChoice;
+                document.documentElement.dataset.theme = theme;
+                localStorage.setItem("recipeStudioTheme", theme);
+            });
+        });
+    })();
+    </script>
+
+</body>
+
+
+<html>
