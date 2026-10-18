@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    
+<body class="recipes-page">
+    <nav>
+        <p>Recipe Studio</p>
+        <img class="logo" src="assets\logo.png" alt="">
+        <a href="index.html">home</a>
+        <a href="page_2.html">recipes</a></button>
+        <a href="about.html">about</a>
+    </nav>
+    <div class="recipes">
+        <section class="featured-dishes">
+            <h1>Featured dishes</h1>
+            <section>
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="recipe.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="logo.png" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="logo.png" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+            </section>
+        </section>
+        
+        <section class="dish-container">
+            <h1>Recipe catalog</h1>
+            <h2>card grid</h2>
+            <div class="dishes">
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+                <div>
+                    <img class="food-image" src="assets\focaccia.jpg" alt="">
+                    <h2><a href="page_2.html">recipe name</a></h2>
+                </div>
+            
+            </section>
+            
+<section class="mode">
+    <p>Choose a theme</p>
+    <button type="button" data-theme-choice="light">Light</button>
+    <button type="button" data-theme-choice="dark">Dark</button>
+    <button type="button" data-theme-choice="warm">Ambient</button>
+</section>
+            
+            </div>
+        </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButtons = document.querySelectorAll(
+        ".mode button[data-theme-choice]"
+    );
+    const themes = ["light", "dark", "warm"];
+    const savedTheme = localStorage.getItem("recipeStudioTheme");
+    const initialTheme = themes.includes(savedTheme) ? savedTheme : "warm";
+
+    function applyTheme(theme) {
+        if (!themes.includes(theme)) return;
+
+        document.body.setAttribute("data-theme", theme);
+        localStorage.setItem("recipeStudioTheme", theme);
+
+        themeButtons.forEach(function (button) {
+            button.setAttribute(
+                "aria-pressed",
+                button.dataset.themeChoice === theme
+            );
+        });
+    }
+
+    themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyTheme(button.dataset.themeChoice);
+        });
+    });
+
+    applyTheme(initialTheme);
+});
+</script>
+
+</body>  
+<html>

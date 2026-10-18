@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    
+<body class="single-recipe-page">
+    <nav>
+        <p>Recipe Studio</p>
+        <img class="logo" src="assets\logo.png" alt="">
+        <a href="index.html">home</a>
+        <a href="page_2.html">recipes</a></button>
+        <a href="about.html">about</a>
+    </nav>
+
+    <div class="recipe-page">
+
+        <section class="recipe-summary">
+            <h1>Featured Recipes</h1>
+            <h1>recipe name</h1>
+            <img src="assets\focaccia.jpg" alt="">
+            <h2>at a glance</h2>
+            <ul>
+                <li>Prep time: 18 hours</li>
+                <li>Cook time: 30 minutes</li>
+                <li>Yield: 2 loaves</li>
+                <li>Difficulty: Easy</li>
+            </ul>
+<section class="mode">
+    <p>Choose a theme</p>
+    <button type="button" data-theme-choice="light">Light</button>
+    <button type="button" data-theme-choice="dark">Dark</button>
+    <button type="button" data-theme-choice="warm">Ambient</button>
+</section>
+        </section>
+        
+        <section class="lists">
+            <h2>ingredients</h2>
+            <ul> 
+                <li>512 g all-purpose flour or bread flour</li>
+                <li>10–15 g kosher salt</li>
+                <li>8 g instant yeast</li>
+                <li>455 g lukewarm water</li>
+                <li>Butter or oil for greasing the pan</li>
+                <li>4 tbsp olive oil, divided</li>
+                <li>Flaky sea salt, to taste</li>
+                <li>1–2 tsp fresh rosemary leaves (optional)</li>
+            </ul>
+            <h2>instructions</h2>
+            <ol>
+                <li>
+                    <strong>Mix the dough.</strong>
+                    Whisk together the flour, kosher salt, and instant
+                    yeast in a large bowl. Add the lukewarm water and
+                    mix with a spatula until a sticky dough forms.
+                </li>
+                <li>
+                    <strong>Rest and fold.</strong>
+                    Cover the dough and let it rest for 30 minutes.
+                    With a wet hand, stretch one edge of the dough
+                    upward and fold it toward the center. Repeat
+                    8–10 times around the bowl.
+                </li>
+                <li>
+                    <strong>Refrigerate overnight.</strong>
+                    Lightly coat the dough with olive oil. Cover the
+                    bowl and refrigerate for at least 12 hours,
+                    preferably 18–24 hours, or up to 3 days.
+                </li>
+                <li>
+                    <strong>Prepare the pan.</strong>
+                    Grease two 8–9 inch round pans or one 9 × 13 inch
+                    pan with butter or oil. Use two forks to release
+                    and gently deflate the dough. Divide it between
+                    the round pans, or leave it whole for the
+                    rectangular pan.
+                </li>
+                <li>
+                    <strong>Let the dough rise.</strong>
+                    Coat the dough with oil and let it rise at room
+                    temperature for 3–4 hours, until puffy and airy.
+                </li>
+                <li>
+                    <strong>Dimple the dough.</strong>
+                    Preheat the oven to 425°F (220°C). Drizzle the
+                    remaining olive oil over the dough. Press your
+                    fingertips deeply into the surface to create
+                    dimples. Add rosemary, if desired, and sprinkle
+                    with flaky sea salt.
+                </li>
+                <li>
+                    <strong>Bake.</strong>
+                    Bake for 25–30 minutes, until the focaccia is
+                    golden brown and crisp underneath.
+                </li>
+                <li>
+                    <strong>Cool and serve.</strong>
+                    Transfer the bread to a cooling rack. Let it
+                    cool for at least 10 minutes before slicing
+                    and serving.
+                </li>
+            </ol>
+            
+            
+        </section>
+    </div>
+        
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButtons = document.querySelectorAll(
+        ".mode button[data-theme-choice]"
+    );
+    const themes = ["light", "dark", "warm"];
+    const savedTheme = localStorage.getItem("recipeStudioTheme");
+    const initialTheme = themes.includes(savedTheme) ? savedTheme : "warm";
+
+    function applyTheme(theme) {
+        if (!themes.includes(theme)) return;
+
+        document.body.setAttribute("data-theme", theme);
+        localStorage.setItem("recipeStudioTheme", theme);
+
+        themeButtons.forEach(function (button) {
+            button.setAttribute(
+                "aria-pressed",
+                button.dataset.themeChoice === theme
+            );
+        });
+    }
+
+    themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyTheme(button.dataset.themeChoice);
+        });
+    });
+
+    applyTheme(initialTheme);
+});
+</script>
+
+</body>
+
+
+<html>

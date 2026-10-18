@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    
+<body class="home">
+    <nav>
+        <img class="logo" src="assets\logo.png" alt="">
+        <a href="index.html">home</a>
+        <a href="page_2.html">recipes</a></button>
+        <a href="about.html">about</a>
+    </nav>
+    <section class="hero">
+        <img src="assets\rs1.png" alt="">
+    </section>
+    <h1>slogan</h1>
+    <button class="slogan-button">Get Started</button>
+    <h1>Featured Recipes</h1>
+    <section class="dishes">
+        <div>
+            <img src="assets\focaccia.jpg" alt="">
+            <h2><a href="page_2.html">Simple Focaccia</a></h2>
+        </div>
+        <div>
+            <img src="assets\logo.png" alt="">
+            <h2><a href="page_2.html">recipe name</a></h2>
+        </div>
+        <div>
+            <img src="assets\logo.png" alt="">
+            <h2><a href="page_2.html">recipe name</a></h2>
+        </div>
+    </section>
+    
+<section class="mode">
+    <p>Choose a theme</p>
+    <button type="button" data-theme-choice="light">Light</button>
+    <button type="button" data-theme-choice="dark">Dark</button>
+    <button type="button" data-theme-choice="warm">Ambient</button>
+</section>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButtons = document.querySelectorAll(
+        ".mode button[data-theme-choice]"
+    );
+    const themes = ["light", "dark", "warm"];
+    const savedTheme = localStorage.getItem("recipeStudioTheme");
+    const initialTheme = themes.includes(savedTheme) ? savedTheme : "warm";
+
+    function applyTheme(theme) {
+        if (!themes.includes(theme)) return;
+
+        document.body.setAttribute("data-theme", theme);
+        localStorage.setItem("recipeStudioTheme", theme);
+
+        themeButtons.forEach(function (button) {
+            button.setAttribute(
+                "aria-pressed",
+                button.dataset.themeChoice === theme
+            );
+        });
+    }
+
+    themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyTheme(button.dataset.themeChoice);
+        });
+    });
+
+    applyTheme(initialTheme);
+});
+</script>
+
+</body>
+
+
+<html>
