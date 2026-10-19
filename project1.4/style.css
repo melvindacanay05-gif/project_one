@@ -415,6 +415,9 @@ nav {
 }
 
 
+
+/* Themes----------- */
+
 body:has(#theme-light:checked) {
     position: relative;
     isolation: isolate;
@@ -591,6 +594,7 @@ body:has(#theme-light:checked) .recipe-page .lists {
     cursor: pointer;
 }
 
+/* carousel-------- */
 
 .carousel-hero {
     position: relative;
@@ -767,6 +771,8 @@ body:has(#theme-light:checked) .recipe-page .lists {
 }
 
 
+/* theme picker */
+
 .theme-picker input[type="radio"] {
     position: absolute;
     width: 1px;
@@ -855,7 +861,7 @@ body:has(#theme-warm:checked) .theme-picker label { background: #e5c49d; color: 
     from { opacity: 0; }
     to { opacity: 1; }
 }
-body { animation: recipeStudioFadeIn .35s ease both; }
+body { animation: recipeStudioFadeIn 2s ease both; }
 @media (max-width: 600px) {
     .carousel-slide, .carousel-slide.active { flex-basis: 88%; height: 230px; }
 }
@@ -946,6 +952,8 @@ nav a, .dishes > div, .carousel-slide img, button { transition:transform .25s ea
     from { opacity: 0; transform: translateX(32px); }
     to   { opacity: 1; transform: translateX(0); }
 }
+
+/* about page */
 
 .about-contact .contact-about {
     animation: aboutPanelSlideIn .55s ease-out both;
