@@ -415,9 +415,6 @@ nav {
 }
 
 
-
-/* Themes----------- */
-
 body:has(#theme-light:checked) {
     position: relative;
     isolation: isolate;
@@ -594,7 +591,6 @@ body:has(#theme-light:checked) .recipe-page .lists {
     cursor: pointer;
 }
 
-/* carousel-------- */
 
 .carousel-hero {
     position: relative;
@@ -771,8 +767,6 @@ body:has(#theme-light:checked) .recipe-page .lists {
 }
 
 
-/* theme picker */
-
 .theme-picker input[type="radio"] {
     position: absolute;
     width: 1px;
@@ -861,7 +855,7 @@ body:has(#theme-warm:checked) .theme-picker label { background: #e5c49d; color: 
     from { opacity: 0; }
     to { opacity: 1; }
 }
-body { animation: recipeStudioFadeIn 2s ease both; }
+body { animation: recipeStudioFadeIn .35s ease both; }
 @media (max-width: 600px) {
     .carousel-slide, .carousel-slide.active { flex-basis: 88%; height: 230px; }
 }
@@ -952,8 +946,6 @@ nav a, .dishes > div, .carousel-slide img, button { transition:transform .25s ea
     from { opacity: 0; transform: translateX(32px); }
     to   { opacity: 1; transform: translateX(0); }
 }
-
-/* about page */
 
 .about-contact .contact-about {
     animation: aboutPanelSlideIn .55s ease-out both;
@@ -1047,4 +1039,148 @@ nav a, .dishes > div, .carousel-slide img, button { transition:transform .25s ea
 
 @media (prefers-reduced-motion: reduce) {
     .about .contact-form .contact-submit { transition: none; }
+}
+
+
+.team-intro-page {
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: min(90%, 1100px);
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+    color: #33271e;
+    background-color: #f7efe3;
+    background-image: url("assets/bg.png");
+    background-repeat: repeat;
+}
+
+.team-intro-page *,
+.team-intro-page *::before,
+.team-intro-page *::after {
+    box-sizing: border-box;
+}
+
+.team-intro-page nav {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.team-intro-page nav a[aria-current="page"] {
+    background-color: #e5c79d;
+    font-weight: 700;
+}
+
+.team-intro {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.team-heading {
+    text-align: center;
+    padding: clamp(1.5rem, 5vw, 3rem) 1rem;
+    border: 2px solid #b9874f;
+    border-radius: 12px;
+    background: rgba(255, 250, 241, 0.9);
+}
+
+.team-eyebrow {
+    margin-bottom: 0.5rem;
+    color: #8c5a35;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.team-heading h1 {
+    margin: 0.3rem 0 1rem;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.team-heading > p:last-child {
+    max-width: 42rem;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.team-member {
+    min-width: 0;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    border: 1px solid #c9b49b;
+    border-radius: 12px;
+    background: rgba(255, 252, 246, 0.94);
+    box-shadow: 0 4px 12px rgba(45, 30, 18, 0.08);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.team-member:hover,
+.team-member:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(45, 30, 18, 0.14);
+}
+
+.team-member h2 {
+    margin-top: 0;
+    margin-bottom: 0.35rem;
+}
+
+.team-role {
+    color: #8c5a35;
+    font-weight: 700;
+}
+
+.team-member p {
+    line-height: 1.6;
+}
+
+.team-member a {
+    color: #684126;
+    overflow-wrap: anywhere;
+}
+
+.team-member a:focus-visible,
+.team-intro-page nav a:focus-visible {
+    outline: 3px solid #9b5e2e;
+    outline-offset: 3px;
+}
+
+.team-footer {
+    padding: 1rem;
+    text-align: center;
+    color: #594638;
+}
+
+@media (max-width: 600px) {
+    .team-intro-page {
+        width: 96%;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+
+    .team-intro-page nav {
+        gap: 0.5rem;
+    }
+
+    .team-intro-page nav a {
+        padding: 0.55rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .team-member {
+        transition: none;
+    }
+
+    .team-member:hover,
+    .team-member:focus-within {
+        transform: none;
+    }
 }
